@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 html {
   font-size: 62.5%;
@@ -13,14 +15,15 @@ body,
 
   body,
   input, 
-  select, 
+  select,
+  button, 
   textarea {
-    font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
 }
 
 .fondo {
-  background-image: url('./img/fondo.jpg');
+  background-image: url('./img/fondo2.jpg');
   height: 100%;
   width: 100%;
 }
@@ -30,18 +33,20 @@ body,
   grid-template-areas: "header"
   "main"
   "footer";
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 9rem 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
 }
 
-a:hover {
-  color: pink;
+a {
+  text-decoration: none;
 }
 
 header{ 
+  font-size: 2rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   grid-area: header;
-  background-color: #203040;
+  background-color: #F4EDDF;
   color: white;
   display: flex;
   align-items: center;
@@ -49,8 +54,16 @@ header{
 }
 
 header a {
-  color: white;
+  color: #da6567;
+  font-weight: bold;
   text-decoration: none;
+  text-align: center;
+}
+
+.logo {
+  background-size: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -59,9 +72,99 @@ main {
 
 footer{
   grid-area: footer;
-  background-color: #203040;
-  color: white;
+  font-weight: bold;
+  background-color : #F4EDDF;
+  color: #da6567;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  flex: 3 60rem; 
+} 
+
+.sidebar {
+  flex: 1 20rem;
+}
+
+.shoppingCart {
+  margin: 1.5rem 5rem 2rem 1.5rem;
+  float: right;
+}
+
+/* Products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.products li {
+  flex: 0 1  29rem;
+  height: 47rem;
+  padding: 2rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.color {
+  font-weight: bold;
+  color:  #F4EDDF;
+}
+
+.color:hover {
+  color: rgb(126, 11, 11);
+}
+
+.product img {
+  max-width: 37rem;
+  max-height: 37rem;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price div, 
+.product-price button {
+  text-align: center;
+  flex: 1;
+}
+
+.product-price div {
+  font-size: 2rem;
+}
+
+.button {
+  padding: 1rem;
+  border: 0.1rem rgb(202, 87, 20) solid; 
+  background-color:  rgb(231, 165, 126);
+}
+
+.button:hover {
+  border: 0.1rem rgb(126, 11, 11) solid;
+}
+
+.button.primary {
+  background-color: antiquewhite;
+}
+
+
+
