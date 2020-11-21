@@ -23,7 +23,7 @@ body,
 }
 
 .fondo {
-  background-image: url('./img/fondo2.jpg');
+  background-color: white;
   height: 100%;
   width: 100%;
 }
@@ -46,15 +46,16 @@ header{
   font-size: 2rem;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   grid-area: header;
-  background-color: #F4EDDF;
+  background-color: #EFEAE4;
   color: white;
   display: flex;
   align-items: center;
   padding: 0.5rem;
+  box-shadow: 10px 5px 5px 5px #faecda;
 }
 
 header a {
-  color: #da6567;
+  color: black;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -66,6 +67,29 @@ header a {
   align-items: center;
 }
 
+
+a.inicio {
+  font-size: 1.8rem;
+  margin: 1rem 2rem 1rem 2rem;
+  text-decoration: none;
+}
+
+a.nosotros {
+  font-size: 1.8rem;
+  margin: 1rem 2rem 1rem 2rem;
+  text-decoration: none;
+}
+
+a.contacto {
+  font-size: 1.8rem;
+  margin: 1rem 2rem 1rem 2rem;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ebb472; 
+}
+
 main {
   grid-area: main;
 }
@@ -73,11 +97,23 @@ main {
 footer{
   grid-area: footer;
   font-weight: bold;
-  background-color : #F4EDDF;
-  color: #da6567;
+  background-color : #EFEAE4;
+  color: #d88322;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.envios {
+  background-color: coral;
+}
+
+.parrafoEnvios {
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: #EFEAE4;
 }
 
 .content {
@@ -164,6 +200,10 @@ footer{
 
 .button.primary {
   background-color: antiquewhite;
+}
+
+.carousel {
+  margin-top: 3rem;
 }
 
 
