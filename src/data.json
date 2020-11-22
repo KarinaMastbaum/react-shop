@@ -6,7 +6,7 @@
         "title": "Vestido Naomi",
         "image": "/images/dress1.jpg",
         "description": "sobre el Vestido Naomi",
-        "availableSize": ["XL","L","M","S"],
+        "availableSize": ["XL", "L", "M", "S"],
         "price": 2500 
         },
         {
@@ -14,7 +14,7 @@
           "image": "/images/dress2.jpg",
           "title": "Vestido Lola con frente fruncido",
           "description": "Ultima tendencia, no importa quién seas, de dónde seas y qué estés haciendo",
-          "availableSizes": ["X", "M", "L"],
+          "availableSizes": ["XS", "X", "M", "L"],
           "price": 3000
         },
         {
@@ -22,7 +22,7 @@
           "image": "/images/dress3.jpg",
           "title": "Vestido Puket color rosa floral",
           "description": "Ultima tendencia, no importa quién seas, de dónde seas y qué estés haciendo",
-          "availableSizes": ["X", "M", "L"],
+          "availableSizes": ["X", "M", "L", "XXL"],
           "price": 3500
         },
         {
@@ -30,7 +30,7 @@
           "image": "/images/dress4.jpg",
           "title": "Vestido Camille con lunares",
           "description": "Ultima tendencia, no importa quién seas, de dónde seas y qué estés haciendo",
-          "availableSizes": ["XL"],
+          "availableSizes": ["XL", "XXL"],
           "price": 4000
         },
         {
@@ -46,6 +46,7 @@
           "image": "/images/dress6.jpg",
           "title": "Vestido Marin Azul y rojo",
           "description": "Ultima tendencia, no importa quién seas, de dónde seas y qué estés haciendo",
+          "availableSizes": ["XS","X", "L", "XL"],
           "price": 2200
         }
    ]

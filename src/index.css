@@ -202,9 +202,23 @@ footer{
   background-color: antiquewhite;
 }
 
+
+/* Carousel */
 .carousel {
   margin-top: 3rem;
 }
+
+/* Filter */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom:  0.1rem rgb(224, 120, 60) solid;
+}
+
+
+
 
 
 

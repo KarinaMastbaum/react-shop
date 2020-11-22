@@ -1,23 +1,57 @@
-import React from 'react';
+import React from "react";
 import data from "./data.json";
 import Products from "./components/Products";
+import Filter from "./components/Filter";
+import Carousels from './components/Carousel';
 import logo from './img/logo.jpg';
 import bag from './img/bag.png';
-import Carousels from './components/Carousel';
-// feature-1;
-
 
 class App extends React.Component {
- 
   constructor() {
     super();
     this.state = {
       products: data.products,
-      size:"",
-      sort:"",
+      size: "",
+      sort: "",
     };
   }
-
+  sortProducts = (event) => {
+    // impl
+    const sort = event.target.value;
+    console.log(event.target.value);
+    this.setState((state) => ({
+      sort: sort,
+      products: this.state.products
+        .slice()
+        .sort((a, b) =>
+          sort === "lowest"
+            ? a.price > b.price
+              ? 1
+              : -1
+            : sort === "highest"
+            ? a.price < b.price
+              ? 1
+              : -1
+            : a._id < b._id
+            ? 1
+            : -1
+        ),
+    }));
+  };
+  filterProducts = (event) => {
+    // impl
+    console.log(event.target.value);
+    if (event.target.value === "") {
+      this.setState({ size: event.target.value, products: data.products });
+    } else {
+      this.setState({
+        size: event.target.value,
+        products: data.products.filter(
+          (product) => product.availableSizes.indexOf(event.target.event) >= 0
+        ),
+      });
+    } 
+  };
   render() {
     return (
       <div className="grid-container">
@@ -43,6 +77,13 @@ class App extends React.Component {
           </div>
           <div className="content">
             <div className="main">
+            <Filter
+                count={this.state.products.length}
+                size={this.state.size}
+                sort={this.state.sort}
+                filterProducts={this.filterProducts}
+                sortProducts={this.sortProducts}
+              ></Filter>
               <Products products={this.state.products}></Products>
             </div>
           </div>
