@@ -3,6 +3,7 @@ import data from "./data.json";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 import Carousels from './components/Carousel';
+import Cart from "./components/Cart";
 import logo from './img/logo.jpg';
 import bag from './img/bag.png';
 
@@ -13,8 +14,32 @@ class App extends React.Component {
       products: data.products,
       size: "",
       sort: "",
+      cartItems: []
     };
   }
+
+  removeFromCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    this.setState({
+      cartItems: cartItems.filter((x) => x._id !== product._id),
+    });
+  };
+  
+  addToCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyInCart = false;
+    cartItems.forEach((item) => {
+      if (item._id === product._id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      cartItems.push({ ...product, count: 1 });
+    }
+    this.setState({ cartItems });
+  };
+
   sortProducts = (event) => {
     // impl
     const sort = event.target.value;
@@ -52,7 +77,7 @@ class App extends React.Component {
       });
     } 
   };
-  render() {
+  render() { 
     return (
       <div className="grid-container">
         <header>
@@ -64,9 +89,9 @@ class App extends React.Component {
               <a className="nosotros">Nosotros</a>
               <a className="contacto">Contacto</a>
           </div>
-          <div className="sidebar">
+          <div>
               <img className="shoppingCart" src={bag} alt="bag"></img>
-            </div>
+          </div>
         </header>
         <main className="fondo">
           <div>
@@ -84,7 +109,16 @@ class App extends React.Component {
                 filterProducts={this.filterProducts}
                 sortProducts={this.sortProducts}
               ></Filter>
-              <Products products={this.state.products}></Products>
+              <Products
+                products={this.state.products}
+                addToCart={this.addToCart}
+              ></Products>
+            </div>
+            <div  className="sidebar">
+              <Cart 
+              cartItems={this.state.cartItems}
+              removeFromCart={this.removeFromCart}
+              />
             </div>
           </div>
         </main>
@@ -93,8 +127,8 @@ class App extends React.Component {
         </footer>
       </div>
     );
- 
   }
+
 }
 
 export default App;
